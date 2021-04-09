@@ -1,0 +1,51 @@
+<div style="margin-left: 2em;margin-top:1.5em;padding: 1.3em;">
+    <div style="display: flex;flex-wrap: wrap;background-color: #fff;height:3em;width:50%;">
+        <a [routerLink]="['/dashboard']" style="text-decoration:none;">
+            <button class="bt1">
+                <mat-icon style="font-size: 2.3em !important;">keyboard_backspace
+                </mat-icon>
+            </button>
+        </a>
+        <span style="font-size: 1.6em;margin-top: 10px;margin-left:1.6em;color:#00BFFF;">New Workbench Request </span>
+    </div>
+    <br />
+    <div style="margin-left:1em;">
+        <form class="example-form">
+            <h3 style="color:#00BFFF;">All fields are mandatory</h3>
+            <h1 style="color:#00BFFF;"> Enter Details </h1>
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Data Source Name</mat-label>
+                <input matInput placeholder="Enter Data Source Name">
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Data Source Bucket ARN</mat-label>
+                <input matInput placeholder="arn:aws:s3:::exampleBucket">
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Data Owner Name</mat-label>
+                <input matInput placeholder="Enter Data Owner Name">
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Email ID Data Owner</mat-label>
+                <input matInput placeholder="Enter Data Owner Email">
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Data Description</mat-label>
+                <textarea matInput placeholder="Enter Description"></textarea>
+            </mat-form-field>
+            <div style="color:#00BFFF;">
+                <mat-checkbox class="example-margin">is data GDPR compliant</mat-checkbox>
+                <br />
+                <mat-checkbox class="example-margin">is the data sensitive</mat-checkbox>
+            </div>
+            <br/>
+            <button mat-raised-button
+                style="background-color: #00BFFF;height:2.2em;color: #fff;font-size: 1.3em;outline: none;border-radius: 0px;border-radius:5px;margin-left:10em;">Submit</button>
+            <br />
+        </form>
+    </div>
+</div>

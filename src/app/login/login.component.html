@@ -1,0 +1,24 @@
+<div style="background: #00BFFF;height: 100vh;width: 100%;">
+  <form fxLayoutAlign="stretch" fxLayout="column" #formName='ngForm' (ngSubmit)="onSubmit(formName)"
+    enctype="multipart/form-data"
+    style="width: 280px;background: #fff;height: 330px;padding:20px;position:absolute;left: 80%;top: 50%;transform: translate(-50%,-50%);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <p style="font-size:30px;text-align: center;margin-top: 26px;">Login</p>
+    <br />
+    <mat-form-field style="font-size: 1.3em;">
+      <mat-label>Username</mat-label>
+      <input matInput >
+    </mat-form-field>
+
+    <mat-form-field style="font-size: 1.3em;">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button type="button" style="outline:none;font-size: 1.4em;color: #6c757d;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button type="submit"
+      style="background-color: #00BFFF;height:2.2em;color: #fff;font-size: 1.3em;outline: none;border-radius: 0px;">Login</button>
+  </form>
+</div>

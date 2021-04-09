@@ -1,0 +1,201 @@
+<div style="margin-left: 2em;margin-top:1.5em;padding: 1.3em;">
+    <div style="display: flex;flex-wrap: wrap;background-color: #fff;height:3em;width:50%;">
+        <a [routerLink]="['/dashboard']" style="text-decoration:none;">
+            <button class="bt1">
+                <mat-icon style="font-size: 2.3em !important;">keyboard_backspace
+                </mat-icon>
+            </button>
+        </a>
+        <span style="font-size: 1.6em;margin-top: 10px;margin-left:1.6em;color:#00BFFF;">New Workbench Request </span>
+    </div>
+    <br />
+    <div style="margin-left:1em;">
+        <form class="example-form">
+            <h3 style="color:#00BFFF;">All fields are mandatory</h3>
+            <h1 style="color:#00BFFF;"> Enter Details </h1>
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Workbench Name</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>ATMECS Login Id</mat-label>
+                <input matInput disabled value="mohamed.hussain@atmecs.com">
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>ATMECS AWS Id</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Bitbucket Id</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Usecase Details</mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width" style="width:50%;font-size:1em;margin-bottom:1em;">
+                <mat-label>Funding Details</mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
+            <br />
+            <mat-form-field style="width:50%;margin-bottom:1em;outline:none !important;">
+                <input matInput [matDatepicker]="dp3" placeholder="Start date" [min]="tomorrow" disabled
+                    style="font-size:1em;outline:none !important;">
+                <mat-datepicker-toggle matSuffix [for]="dp3" style="font-size:2em;outline:none !important;border:0;">
+                </mat-datepicker-toggle>
+                <mat-datepicker #dp3 disabled="false" style="outline:none !important;"></mat-datepicker>
+            </mat-form-field>
+            <br />
+            <mat-form-field style="width:50%;margin-bottom:1em;">
+                <input matInput [matDatepicker]="dp4" placeholder="End date" [min]="tomorrow" disabled>
+                <mat-datepicker-toggle matSuffix [for]="dp4" style="font-size:2em;outline:none !important;border:0">
+                </mat-datepicker-toggle>
+                <mat-datepicker #dp4 disabled="false"></mat-datepicker>
+            </mat-form-field>
+            <br />
+            <h1 style="color:#00BFFF;"> Service Catalog </h1>
+            <div style="margin-top:1.5em;padding: 1.3em;border:1px solid grey;height:500px;width:50%;overflow:auto;">
+                <mat-card class="example-card"
+                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;background-color:#f1f1f1;color:#00BFFF;">
+                    <mat-card-header style="background-color:#FFFAFA;">
+                        <div style="display: flex;flex-wrap: wrap;justify-content:space-between;width:100%;">
+                            <div>
+                                <p style="font-size:1em;font-weight:500;margin-top:7px;">Athena</p>
+                            </div>
+                            <div>
+                                <mat-checkbox class="example-margin"
+                                    style="font-size:1em;font-weight:500;margin-top:9px;margin-right:1em;">
+                                </mat-checkbox>
+                            </div>
+                        </div>
+                    </mat-card-header>
+                </mat-card>
+                <br />
+                <mat-card class="example-card"
+                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;background-color:#f1f1f1;color:#00BFFF;">
+                    <mat-card-header style="background-color:#FFFAFA;">
+                        <div style="display: flex;flex-wrap: wrap;justify-content:space-between;width:100%;">
+                            <section>
+                                <p style="font-size:1em;font-weight:500;margin-top:7px;">s3</p>
+                            </section>
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin"
+                                    style="font-size:1em;font-weight:500;margin-top:9px;margin-right:1em;">
+                                </mat-checkbox>
+                            </section>
+                        </div>
+                    </mat-card-header>
+                    <mat-form-field class="example-full-width" style="padding:1.3em;">
+                        <mat-label>Bucket Name</mat-label>
+                        <span matPrefix>dse-wb-{{ '{' }}workbench{{ '}' }}-</span>
+                        <input matInput>
+                        <span matSuffix>-s3</span>
+                    </mat-form-field>
+                </mat-card>
+                <br />
+                <mat-card class="example-card"
+                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;background-color:#f1f1f1;color:#00BFFF;">
+                    <mat-card-header style="background-color:#FFFAFA;">
+                        <div style="display: flex;flex-wrap: wrap;justify-content:space-between;width:100%;">
+                            <section>
+                                <p style="font-size:1em;font-weight:500;margin-top:7px;">Sagemaker</p>
+                            </section>
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin"
+                                    style="font-size:1em;font-weight:500;margin-top:9px;margin-right:1em;">
+                                </mat-checkbox>
+                            </section>
+                        </div>
+                    </mat-card-header>
+                    <mat-form-field class="example-full-width" style="padding:1em;">
+                        <mat-label>Instance Name</mat-label>
+                        <span matPrefix>dse-wb-{{ '{' }}workbench{{ '}' }}-</span>
+                        <input matInput>
+                        <span matSuffix>-sm</span>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" style="padding:1em;">
+                        <mat-label>Instance Type</mat-label>
+                        <select matNativeControl required>
+                            <option value="ml.t2.medium">ml.t2.medium</option>
+                            <option value="ml.t2.large">ml.t2.large</option>
+                            <option value="ml.t2.xlarge">ml.t2.xlarge</option>
+                            <option value="ml.t2.2xlarge">ml.t2.2xlarge</option>
+                        </select>
+                    </mat-form-field>
+                </mat-card>
+                <br />
+                <mat-card class="example-card"
+                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;background-color:#f1f1f1;color:#00BFFF;">
+                    <mat-card-header style="background-color:#FFFAFA;">
+                        <div style="display: flex;flex-wrap: wrap;justify-content:space-between;width:100%;">
+                            <section>
+                                <p style="font-size:1em;font-weight:500;margin-top:7px;">Glue</p>
+                            </section>
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin"
+                                    style="font-size:1em;font-weight:500;margin-top:9px;margin-right:1em;">
+                                </mat-checkbox>
+                            </section>
+                        </div>
+                    </mat-card-header>
+                </mat-card>
+                <br />
+                <mat-card class="example-card"
+                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;background-color:#f1f1f1;color:#00BFFF;">
+                    <mat-card-header style="background-color:#FFFAFA;">
+                        <div style="display: flex;flex-wrap: wrap;justify-content:space-between;width:100%;">
+                            <section>
+                                <p style="font-size:1em;font-weight:500;margin-top:7px;">Lambda</p>
+                            </section>
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin"
+                                    style="font-size:1em;font-weight:500;margin-top:9px;margin-right:1em;">
+                                </mat-checkbox>
+                            </section>
+                        </div>
+                    </mat-card-header>
+                    <mat-form-field class="example-full-width" style="padding:1em;">
+                        <mat-label>Function Name</mat-label>
+                        <span matPrefix>dse-wb-{{ '{' }}workbench{{ '}' }}-</span>
+                        <input matInput>
+                        <span matSuffix>-lmb</span>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" style="padding:1em;">
+                        <mat-label>Runtime</mat-label>
+                        <select matNativeControl required>
+                            <option value="ml.t2.medium">Python 2.7</option>
+                            <option value="ml.t2.large">Python 3.7</option>
+                        </select>
+                    </mat-form-field>
+                </mat-card>
+                <br />
+            </div>
+            <br />
+            <div>
+                <a [routerLink]="['/dashboard/requestworkbench']" style="text-decoration:none;">
+                    <button mat-raised-button
+                        style="background-color: #00BFFF;height:2.2em;color: #fff;font-size: 1.3em;outline: none;border-radius: 0px;border-radius:5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">Add
+                        Another Lambda</button>
+                </a>
+            </div>
+            <br />
+            <h1 style="color:#00BFFF;">Data Catalog</h1>
+            <div style="color:#00BFFF;">
+                <mat-checkbox class="example-margin">datalake13nov</mat-checkbox>
+                <br />
+                <mat-checkbox class="example-margin">Atmecs_datalake</mat-checkbox>
+                <br />
+                <mat-checkbox class="example-margin">NewDataLake</mat-checkbox>
+            </div>
+            <br />
+            <button mat-raised-button
+                style="background-color: #00BFFF;height:2.2em;color: #fff;font-size: 1.3em;outline: none;border-radius: 0px;border-radius:5px;margin-left:10em;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">Submit</button>
+            <br />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div style="display: flex;flex-wrap: wrap;justify-content: space-between;padding:1em;">
+    <div>
+        <h1 style="color:#00BFFF">Request List</h1>
+    </div>
+    <div>
+        <a [routerLink]="['/dashboard/datarequest']" style="text-decoration:none;">
+            <button mat-raised-button
+                style="background-color: #00BFFF;height:2.2em;color: #fff;font-size: 1.3em;outline: none;border-radius: 0px;border-radius:5px;">Data Request</button>
+        </a>
+    </div>
+</div>
+<div style="display: flex;flex-wrap: wrap;justify-content: space-between;padding:1em;">
+    <div>
+        <a [routerLink]="['/dashboard/datasources']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 1 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(1)" style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">All</button></a>
+        <a [routerLink]="['/dashboard/datasources/datasourcespending']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 2 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(2)" style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">Pending</button></a>
+        <a [routerLink]="['/dashboard/datasources/datasourcesapproved']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 3 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(3)" style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">Approved</button></a>
+        <a [routerLink]="['/dashboard/datasources/datasourcesrejected']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 4 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(4)" style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">Rejected</button></a>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" style="width: 300px;">
+            <mat-label style="font-size: 1.3em;">Search</mat-label>
+            <input matInput autocomplete="off">
+            <button type="button" style="outline:none;font-size: 1.4em;color: #6c757d;font-size: 1.3em;" mat-icon-button
+                matSuffix>
+                <mat-icon style="font-size: 1.3em;">search</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div style="width:99%;margin:5px;">
+    <router-outlet></router-outlet>
+</div>

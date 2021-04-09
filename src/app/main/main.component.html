@@ -1,0 +1,108 @@
+<div style="display: flex;flex-wrap: wrap;justify-content: space-between;padding:1em;">
+    <mat-card
+        style="width:16rem;height:7rem;margin-top: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div
+            style="display: flex;flex-wrap: wrap;justify-content: space-between;margin:0px ! important;padding:0px ! important;">
+            <div style="color: #00BFFF;">
+                <h3>Pending Request</h3>
+                <h1>0</h1>
+            </div>
+            <div
+                style="background-color: #00BFFF;height:4em;width:4em;border-radius:40px;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <mat-icon style="font-size:3.5em !important;margin-top:3px;margin-right:22px;color: #fff;">
+                    arrow_right_alt</mat-icon>
+            </div>
+        </div>
+    </mat-card>
+    <mat-card
+        style="width:16rem;height:7rem;margin-top: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div
+            style="display: flex;flex-wrap: wrap;justify-content: space-between;margin:0px ! important;padding:0px ! important;">
+            <div style="color: #00BFFF;">
+                <h3>Approved Request</h3>
+                <h1>0</h1>
+            </div>
+            <div
+                style="background-color: #00BFFF;height:4em;width:4em;border-radius:40px;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <mat-icon style="font-size:3.5em !important;margin-top:3px;margin-right:22px;color: #fff;">
+                    trending_up</mat-icon>
+            </div>
+        </div>
+    </mat-card>
+    <mat-card
+        style="width:16rem;height:7rem;margin-top: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div
+            style="display: flex;flex-wrap: wrap;justify-content: space-between;margin:0px ! important;padding:0px ! important;">
+            <div style="color: #00BFFF;">
+                <h3>Rejected Request</h3>
+                <h1>0</h1>
+            </div>
+            <div
+                style="background-color: #00BFFF;height:4em;width:4em;border-radius:40px;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <mat-icon style="font-size:3.5em !important;margin-top:3px;margin-right:22px;color: #fff;">
+                    trending_down</mat-icon>
+            </div>
+        </div>
+    </mat-card>
+        <mat-card
+            style="width:16rem;height:7rem;margin-top: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div
+                style="display: flex;flex-wrap: wrap;justify-content: space-between;margin:0px ! important;padding:0px ! important;">
+                <div style="color: #00BFFF;">
+                    <h3>Total Request</h3>
+                    <h1>0</h1>
+                </div>
+                <div
+                    style="background-color: #00BFFF;height:4em;width:4em;border-radius:40px;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <mat-icon style="font-size:3.5em !important;margin-top:3px;margin-right:22px;color: #fff;">
+                        bar_chart</mat-icon>
+                </div>
+            </div>
+        </mat-card>
+</div>
+<hr />
+<div style="display: flex;flex-wrap: wrap;justify-content: space-between;padding:1em;">
+    <div>
+        <h1 style="color:#00BFFF">Request List</h1>
+    </div>
+    <div>
+        <a [routerLink]="['/dashboard/requestworkbench']" style="text-decoration:none;">
+            <button mat-raised-button
+                style="background-color: #00BFFF;height:2.2em;color: #fff;font-size: 1.3em;outline: none;border-radius: 0px;border-radius:5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">Request
+                Workbench</button>
+        </a>
+    </div>
+</div>
+<div style="display: flex;flex-wrap: wrap;justify-content: space-between;padding:1em;">
+    <div>
+        <a [routerLink]="['/dashboard']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 1 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(1)"
+                style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">All</button></a>
+        <a [routerLink]="['/dashboard/pending']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 2 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(2)"
+                style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">Pending</button></a>
+        <a [routerLink]="['/dashboard/approved']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 3 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(3)"
+                style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">Approved</button></a>
+        <a [routerLink]="['/dashboard/rejected']" style="text-decoration:none;">
+            <button mat-raised-button [ngClass]="this.selected == 4 ? 'tab_selected' : 'tab_unselected'"
+                (click)="change(4)"
+                style="margin-left:20px;margin-bottom:20px;outline: none;color:#00BFFF">Rejected</button></a>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" style="width: 300px;">
+            <mat-label style="font-size: 1.3em;">Search</mat-label>
+            <input matInput autocomplete="off">
+            <button type="button" style="outline:none;font-size: 1.4em;color: #6c757d;font-size: 1.3em;" mat-icon-button
+                matSuffix>
+                <mat-icon style="font-size: 1.3em;">search</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div style="width:99%;margin:5px;">
+    <router-outlet></router-outlet>
+</div>

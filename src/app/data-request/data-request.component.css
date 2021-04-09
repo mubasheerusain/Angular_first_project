@@ -1,0 +1,24 @@
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color:  #00BFFF !important;
+   }
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: #00BFFF !important;;
+  }
+  
+  .bt1{
+    color: #00BFFF;
+    outline: none;
+    border: none;
+    background:none;
+    margin-top: 4px;
+}
+
+.bt1:hover{
+    background-color: #D3D3D3;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}

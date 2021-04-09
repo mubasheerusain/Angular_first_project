@@ -1,0 +1,74 @@
+<mat-drawer-container [class.drawer-opened]="drawer.opened" class="example-container"
+  style="background-color: #e8e8e8;height: 100%;">
+  <mat-drawer #drawer class="drawer" mode="side" opened="true"
+    style="width: 240px;background-color: #00BFFF;color: #fff;">
+    <div>
+      <button class="bt">
+        <mat-icon class="close" (click)="drawer.close()" style="margin-right: -4px;color:#fff ! important;">close
+        </mat-icon>
+      </button>
+      <img src="../../assets/images/atmecslogo.png" alt="ATMECS" width="135" height="50"
+        style="margin:5px;margin-left:1em;">
+      <br />
+      <br />
+    </div>
+    <div class="lin">
+      <a [routerLink]="['/dashboard']"
+        style="text-decoration: none;color:#fff; margin-left: 2em;display: flex;flex-direction:row;margin-top:3px;">
+        <mat-icon>home</mat-icon>
+        <p style="margin-top:3px;">&nbsp;&nbsp;&nbsp;Dashboard</p>
+      </a>
+    </div>
+    <div class="lin">
+      <a [routerLink]="['/dashboard/profile']"
+        style="text-decoration: none;color:#fff; margin-left: 2em;display: flex;flex-direction:row;margin-top:3px;">
+        <mat-icon>person</mat-icon>
+        <p style="margin-top:3px;">&nbsp;&nbsp;&nbsp;Profile</p>
+      </a>
+    </div>
+    <div class="lin">
+      <a [routerLink]="['/dashboard/workbenches']"
+        style="text-decoration: none;color:#fff; margin-left: 2em;display: flex;flex-direction:row;margin-top:3px;">
+        <mat-icon>description</mat-icon>
+        <p style="margin-top:3px;">&nbsp;&nbsp;&nbsp;Workbenches</p>
+      </a>
+    </div>
+    <div class="lin">
+      <a [routerLink]="['/dashboard/datasources']"
+        style="text-decoration: none;color:#fff; margin-left: 2em;display: flex;flex-direction:row;margin-top:3px;">
+        <mat-icon>settings_system_daydream</mat-icon>
+        <p style="margin-top:3px;">&nbsp;&nbsp;&nbsp;Datasources</p>
+      </a>
+    </div>
+  </mat-drawer>
+
+  <mat-toolbar
+    style="background-color: #fff;height:2.3em;margin:5px;width:99%;border-radius:5px;box-shadow: 20 4px 8px 0 rgba(0, 0, 0, 0.2), 20 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <button class="bt1">
+      <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()" style="margin-top: 4px;color: #00BFFF;">
+        menu
+      </mat-icon>
+    </button>
+    <div style="display: flex;flex-wrap: wrap;justify-content: space-between;width:100%;">
+      <div>
+        <h1 style="margin-top:2px;margin-left: 5px;color: #00BFFF;font-size: 1em;">Dashboard</h1>
+      </div>
+      <div>
+        <button mat-button [matMenuTriggerFor]="beforeMenu" [disableRipple]="true" class="nofocus" style="font-size:18px;">
+          <mat-icon>account_circle</mat-icon>&nbsp;&nbsp;Mohamed Mubasheer Hussain
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before" style="margin-right:-10px !important;">
+          <a [routerLink]="['/login']" style="text-decoration:none;">
+            <button mat-menu-item class="nofocus" style="width:100%;">
+              <mat-icon style="color: #00BFFF;font-size:20px;">exit_to_app</mat-icon>
+              <span style="font-size:17px;">Log out</span>
+            </button>
+          </a>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-toolbar>
+  <div style="width:99%;margin:5px;">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

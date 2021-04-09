@@ -1,0 +1,18 @@
+.tab_selected {
+    background-color: #00BFFF;
+    color: #fff !important; 
+    border-radius: 0 px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color:  #00BFFF !important;
+   }
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: #00BFFF !important;;
+  }
+  ::ng-deep .mat-focused .mat-icon{
+      color: #00BFFF;
+  }
